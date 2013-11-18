@@ -43,7 +43,7 @@ Where:
 
 WGS84 is used by most GPS systems today.
 
-GPS calculate positions using the [ECEF]() system.  Position is then converted to WGS coordinates for readability.  Actually WGS84 is based on ECEF with the exception the coordinate system is lat/lng.  However the orgin is still at 0,0,0.
+GPS calculate positions using the [ECEF](ecef.md) system.  Position is then converted to WGS coordinates for readability.  Actually WGS84 is based on ECEF with the exception the coordinate system is lat/lng.  However the orgin is still at 0,0,0.
 
 
 ## Coordinate System
@@ -116,6 +116,10 @@ An SRS pulls all the information above together.  The EPSG repository lists hund
             AXIS["Y",NORTH],
             EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs"],
             AUTHORITY["EPSG","3857"]]
+
+
+
+## Misc. Geodetic versus Geocentric Latitudes
 
 
 
