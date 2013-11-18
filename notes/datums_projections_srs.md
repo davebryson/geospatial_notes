@@ -68,11 +68,11 @@ used by GPS systems today (and is the underpinnings of WGS84?) .  But is often c
 Projection essentially allows us to map a curved surface (Spheroid) on to a flat plane. Imagine drawing a map on a piece of paper and then trying to 'tape' the map onto say a basketball.  Projection allows us to transform the points from one to another.  No projection
 is perfect all introduce some form of distoration of the map.  There are many projections, but 2 types are the most commonly used:
 
-### Cylindrical Equidistant Projection 
+#### Cylindrical Equidistant Projection 
     
 Aka: Cylindrical Equirectangular, Plate Carrée, Simple Cylindrical, WGS84 Geodetic, or WGS84 Lat/Lon projection. This approach does not scale the meridians of the original globe. Thus, distances are not distorted north-to-south. However, each line of latitude is stretched to the same length as the equator, providing significant stretching east-to-west. It also doesn't preserve area, shape, or bearing on the map.  The benefit of this map projection is the ease of construction, especially for com- puter mapping systems. One degree of latitude and one degree of longitude are the same length in any area of the map, therefore it preserves distance.
 
-### Conformal Projection (Mercator)
+#### Conformal Projection (Mercator)
 
 The Mercator projection is the most common used: Google Maps, Openstreet, etc.... A conformal projection preserves the shape and angles of a map.  Lines of longitude have equal lengths and are equally spaced. But lines of latitude increase as you move away from the equator resulting in stretching near the poles.   The mercator projection approaches infinity at the poles setting the maximum latitude to +- 85.05
 
@@ -85,7 +85,36 @@ Many popular web based mapping services use the Mercator projection based on a S
 
 [Bing Maps](http://msdn.microsoft.com/en-us/library/bb259689.aspx)  
 
-## Spatial Reference System
+## Spatial Reference System (SRS)
+
+An SRS pulls all the information above together.  The EPSG repository lists hundereds of SRS configurations. The most common are:
+
+* [EPSG:4326](http://spatialreference.org/ref/epsg/4326/) This is the WGS84 datum defining the shape of the Spheriod, the coordinate system, and the projection (which is the Cylindical Equidistant)
+
+* [EPSG:3857](http://spatialreference.org/ref/sr-org/7483/) Aka EPSG: 900913. This is the Google Web Mercator - the most used for web maps.  It uses the WGS84 datum but instead the Equidistant projection it employs the mercator projection:
+
+    PROJCS["WGS 84 / Pseudo-Mercator",
+        GEOGCS["WGS 84",
+            DATUM["WGS_1984",
+                SPHEROID["WGS 84",6378137,298.257223563,
+                    AUTHORITY["EPSG","7030"]],
+                    AUTHORITY["EPSG","6326"]],
+            PRIMEM["Greenwich",0,
+                AUTHORITY["EPSG","8901"]],
+            UNIT["degree",0.0174532925199433,
+                AUTHORITY["EPSG","9122"]],
+            AUTHORITY["EPSG","4326"]],
+        PROJECTION["Mercator_1SP"],
+        PARAMETER["central_meridian",0],
+        PARAMETER["scale_factor",1],
+        PARAMETER["false_easting",0],
+        PARAMETER["false_northing",0],
+        UNIT["metre",1,
+            AUTHORITY["EPSG","9001"]],
+        AXIS["X",EAST],
+        AXIS["Y",NORTH],
+        EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs"],
+        AUTHORITY["EPSG","3857"]]
 
 
 
