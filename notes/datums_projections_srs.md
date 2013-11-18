@@ -65,7 +65,29 @@ used by GPS systems today (and is the underpinnings of WGS84?) .  But is often c
 
 ## Projection
 
+Projection essentially allows us to map a curved surface (Spheroid) on to a flat plane. Imagine drawing a map on a piece of paper and then trying to 'tape' the map onto say a basketball.  Projection allows us to transform the points from one to another.  No projection
+is perfect all introduce some form of distoration of the map.  There are many projections, but 2 types are the most commonly used:
+
+### Cylindrical Equidistant Projection 
+    
+Aka: Cylindrical Equirectangular, Plate Carrée, Simple Cylindrical, WGS84 Geodetic, or WGS84 Lat/Lon projection. This approach does not scale the meridians of the original globe. Thus, distances are not distorted north-to-south. However, each line of latitude is stretched to the same length as the equator, providing significant stretching east-to-west. It also doesn't preserve area, shape, or bearing on the map.  The benefit of this map projection is the ease of construction, especially for com- puter mapping systems. One degree of latitude and one degree of longitude are the same length in any area of the map, therefore it preserves distance.
+
+### Conformal Projection (Mercator)
+
+The Mercator projection is the most common used: Google Maps, Openstreet, etc.... A conformal projection preserves the shape and angles of a map.  Lines of longitude have equal lengths and are equally spaced. But lines of latitude increase as you move away from the equator resulting in stretching near the poles.   The mercator projection approaches infinity at the poles setting the maximum latitude to +- 85.05
+
+Many popular web based mapping services use the Mercator projection based on a Sphere versus an Ellipsoid:
+
+> To simplify the calculations, we use the spherical form of this projection, not the ellipsoidal form. Since 
+> the projection is used only for map display, and not for displaying numeric coordinates, we don’t need 
+> the extra precision of an ellipsoidal projection. The spherical projection causes approximately 0.33% 
+> scale distortion in the Y direction, which is not visually noticeable.
+
+[Bing Maps](http://msdn.microsoft.com/en-us/library/bb259689.aspx)  
+
 ## Spatial Reference System
+
+
 
 
 
