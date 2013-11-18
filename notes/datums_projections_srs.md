@@ -25,7 +25,7 @@ With a reference frame for the shape of the earth, a coordinate system is also n
 are 3 common coordinate systems
 
 * Geocentric (X,Y,Z): An X,Y,Z coordinate system with it's origin at the center of the Earth [ECEF](). This is the coordinate system
-used by GPS systems today.  But is often converted to Geographic coordinates for users (easier to understand). 
+used by GPS systems today (and is the underpinnings of WGS84?) .  But is often converted to Geographic coordinates for users (easier to understand). 
 
 * Geographic (latitude/longitude): Geographic (Spherical) coordinates are angular measurements used to identify locations on earth.  The latitude is the anglular measurement North and South from the Equator in the range [-90, 90]. Longitude is the anglular measurement East and West starting from the Greenwich meridian in the range [-180, 180]
 
@@ -49,6 +49,19 @@ It defines the Earth as an Ellipsoid with the following information:
     UNIT["degree",0.01745329251994328,
         AUTHORITY["EPSG","9122"]],
     AUTHORITY["EPSG","4326"]]
+
+Where:
+  6378137 is the Earth's radius in meters and 
+  298.257223563 is the flattening factor to the shape of the Ellipsoid
+
+WGS84 is used by most GPS systems today.
+
+GPS calculate positions using the [ECEF]() system.  Position is then converted to WGS coordinates for readability.  Actually WGS84 is based on ECEF with the exception the coordinate system is lat/lng.  However the orgin is still at 0,0,0.
+
+
+## Projection
+
+
 
 
 
