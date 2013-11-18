@@ -21,21 +21,7 @@ a Sphere makes calculations easier but is not the best appoximation because of f
 > widely used datum is WGS 1984. It serves as the framework for locational measurement worldwide. 
 > [ESRI](http://webhelp.esri.com/arcgisdesktop/9.2/index.cfm?TopicName=Spheroids_and_spheres)
 
-With a reference frame for the shape of the earth, a coordinate system is also needed to define locations.  There
-are 3 common coordinate systems
-
-* Geocentric (X,Y,Z): An X,Y,Z coordinate system with it's origin at the center of the Earth [ECEF](). This is the coordinate system
-used by GPS systems today (and is the underpinnings of WGS84?) .  But is often converted to Geographic coordinates for users (easier to understand). 
-
-* Geographic (latitude/longitude): Geographic (Spherical) coordinates are angular measurements used to identify locations on earth.  The latitude is the anglular measurement North and South from the Equator in the range [-90, 90]. Longitude is the anglular measurement East and West starting from the Greenwich meridian in the range [-180, 180]
-
-* Rectangular Coordinates (X, Y):  A cartesian coordinate system using X and Y values to represent vertical and horizontal positions usually in meters.  Rectangular coordinates are best fitted for 2d maps
-
-
-![Coordinate Systems](../images/coordinate_systems.png "Coordinate Systems")
-[Source](http://www.sharpgis.net/post/2007/05/05/Spatial-references2c-coordinate-systems2c-projections2c-datums2c-ellipsoids-e28093-confusing.aspx)
-
-The most common Datum used today is [WGS84 aka EPSG:4326](http://spatialreference.org/ref/epsg/4326/)
+[WGS84 aka EPSG:4326](http://spatialreference.org/ref/epsg/4326/) is the most common datum in use.
 
 It defines the Earth as an Ellipsoid with the following information:
 
@@ -51,17 +37,35 @@ It defines the Earth as an Ellipsoid with the following information:
     AUTHORITY["EPSG","4326"]]
 
 Where:
-  6378137 is the Earth's radius in meters and 
-  298.257223563 is the flattening factor to the shape of the Ellipsoid
+
+* 6378137 is the Earth's radius in meters
+* 298.257223563 is the flattening factor to the shape of the Ellipsoid
 
 WGS84 is used by most GPS systems today.
 
 GPS calculate positions using the [ECEF]() system.  Position is then converted to WGS coordinates for readability.  Actually WGS84 is based on ECEF with the exception the coordinate system is lat/lng.  However the orgin is still at 0,0,0.
 
 
+## Coordinate System
+
+With a reference frame for the shape of the earth, a coordinate system is also needed to define locations.  There
+are 3 common coordinate systems
+
+* Geocentric (X,Y,Z): An X,Y,Z coordinate system with it's origin at the center of the Earth [ECEF](). This is the coordinate system
+used by GPS systems today (and is the underpinnings of WGS84?) .  But is often converted to Geographic coordinates for users (easier to understand). 
+
+* Geographic (latitude/longitude): Geographic (Spherical) coordinates are angular measurements used to identify locations on earth.  The latitude is the anglular measurement North and South from the Equator in the range [-90, 90]. Longitude is the anglular measurement East and West starting from the Greenwich meridian in the range [-180, 180]
+
+* Rectangular Coordinates (X, Y):  A cartesian coordinate system using X and Y values to represent vertical and horizontal positions usually in meters.  Rectangular coordinates are best fitted for 2d maps
+
+
+![Coordinate Systems](../images/coordinate_systems.png "Coordinate Systems")
+[Source](http://www.sharpgis.net/post/2007/05/05/Spatial-references2c-coordinate-systems2c-projections2c-datums2c-ellipsoids-e28093-confusing.aspx)
+
+
 ## Projection
 
-
+## Spatial Reference System
 
 
 
