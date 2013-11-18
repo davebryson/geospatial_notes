@@ -92,8 +92,9 @@ An SRS pulls all the information above together.  The EPSG repository lists hund
 * [EPSG:4326](http://spatialreference.org/ref/epsg/4326/) This is the WGS84 datum defining the shape of the Spheriod, the coordinate system, and the projection (which is the Cylindical Equidistant)
 
 * [EPSG:3857](http://spatialreference.org/ref/sr-org/7483/) Aka EPSG: 900913. This is the Google Web Mercator - the most used for web maps.  It uses the WGS84 datum but instead the Equidistant projection it employs the mercator projection:
-    
-    
+
+
+
     PROJCS["WGS 84 / Pseudo-Mercator",
     GEOGCS["WGS 84",
         DATUM["WGS_1984",
