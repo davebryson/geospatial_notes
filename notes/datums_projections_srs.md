@@ -133,9 +133,8 @@ EPSG codes pull this information together
 
 * Geodetic latitude is determined by the angle between the normal of the Ellipsoid and the plane of the equator
 * Geocentric latitude is based on the angle formed from the center of the Earth
-
-Geodetic = Geocentric when the shape of the Earth is a Sphere
-Geodetic becomes >= to Geocentric the more oblate the Ellipsoid
+* Geodetic = Geocentric when the shape of the Earth is a Sphere
+* Geodetic becomes >= to Geocentric the more oblate the Ellipsoid
 
 WGS84 assumes a geodetic lattitude is used
 
