@@ -87,7 +87,7 @@ Many popular web based mapping services use the Mercator projection based on a S
 
 ## Spatial Reference System (SRS)
 
-An SRS pulls all the information above together.  The EPSG repository lists hundereds of SRS configurations. The most common are:
+A SRS pulls all the information above together.  The EPSG repository lists hundereds of SRS configurations. The most common are:
 
 * [EPSG:4326](http://spatialreference.org/ref/epsg/4326/) This is the WGS84 datum defining the shape of the Spheriod, the coordinate system, and the projection (which is the Cylindical Equidistant)
 
@@ -118,8 +118,29 @@ An SRS pulls all the information above together.  The EPSG repository lists hund
             AUTHORITY["EPSG","3857"]]
 
 
+## Quick notes summary:
+
+A SRS describes:
+
+* Datum: The reference shape of the Earth
+* Coordinate system: The format of locations on Earth
+* Projection: How to warp 2d information on to a curved surface
+
+EPSG codes pull this information together
+
 
 ## Misc. Geodetic versus Geocentric Latitudes
+
+* Geodetic latitude is determined by the angle between the normal of the Ellipsoid and the plane of the equator
+* Geocentric latitude is based on the angle formed from the center of the Earth
+
+Geodetic = Geocentric when the shape of the Earth is a Sphere
+Geodetic becomes >= to Geocentric the more oblate the Ellipsoid
+
+WGS84 assumes a geodetic lattitude is used
+
+Converting cartesian coordinates (X,Y,Z) to geographic (lat,lon,alt) is more complicated using Geodetic
+
 
 
 
