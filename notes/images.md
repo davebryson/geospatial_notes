@@ -53,8 +53,8 @@ Degree Per Pixel:
     p = number of pixels per tile
 
 * Choose a base level that closely matches the resolution of the imagery.  The base level is the highest zoom level - most detailed view.  You can use Degree Per Pixel
-* With a base level you can derive lower resolution tiles. 4 base tiles become on lower tile
- 
+* With a base level you can derive lower resolution tiles. 4 base tiles become 1 lower tile
+
 
 
 
